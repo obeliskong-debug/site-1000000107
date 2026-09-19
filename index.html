@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+	<link rel="preconnect" href="https://images.matris.ai" crossorigin>
+	<link rel="preload" as="image" fetchpriority="high" href="https://images.matris.ai/sites/1000000107/media/p1/hero-bg-xl.jpg">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<title>Amero | Premium Companionship Services</title>
+	<meta name="description" content="Experience sophisticated and discreet premium companionship services. Verified professionals, complete privacy protection, and 24/7 support.">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="color-scheme" content="light">
+	<meta property="og:title" content="Amero | Premium Companionship Services">
+	<meta property="og:description" content="Experience sophisticated and discreet premium companionship services. Verified professionals, complete privacy protection, and 24/7 support.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://images.matris.ai/sites/1000000107/media/p1/hero-bg-xl.jpg">
+	<style>
+		:root {
+			--bs-primary: #6b5aff;
+			--bs-secondary: #8b7aff;
+			--bs-body-bg: #f8f9fa;
+			--bs-body-color: #2d3748;
+			--bs-border-radius: 8px;
+			--bs-border-color: #e2e8f0;
+			font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			background-color: #ffffff;
+			color: var(--bs-body-color);
+			overflow-x: hidden;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			text-wrap: balance;
+			font-weight: 600;
+			color: #1a202c;
+		}
+
+		h1 {
+			font-size: clamp(2rem, 5vw, 3.5rem);
+			line-height: 1.2;
+		}
+
+		h2 {
+			font-size: clamp(1.75rem, 4vw, 2.75rem);
+			line-height: 1.3;
+		}
+
+		h3 {
+			font-size: 1.5rem;
+		}
+
+		p {
+			text-wrap: pretty;
+			line-height: 1.6;
+			font-size: 1rem;
+		}
+
+		.small-text {
+			font-size: 0.875rem;
+			color: #718096;
+		}
+
+		/* Navbar */
+		.navbar {
+			background-color: #ffffff;
+			border-bottom: 1px solid var(--bs-border-color);
+			backdrop-filter: blur(10px);
+			position: sticky;
+			top: 0;
+			z-index: 1020;
+		}
+
+		.navbar-brand {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: var(--bs-primary) !important;
+			letter-spacing: -0.5px;
+		}
+
+		.nav-link {
+			color: var(--bs-body-color) !important;
+			font-weight: 500;
+			transition: color 0.3s ease;
+			position: relative;
+		}
+
+		.nav-link::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background-color: var(--bs-primary);
+			transition: width 0.3s ease;
+		}
+
+		.nav-link:hover::after {
+			width: 100%;
+		}
+
+		/* Hero Section */
+		.hero {
+			position: relative;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
+			overflow: hidden;
+		}
+
+		.hero-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 1;
+		}
+
+		.hero-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 255, 255, 0.4);
+			backdrop-filter: blur(2px);
+			z-index: 2;
+		}
+
+		.hero-content {
+			position: relative;
+			z-index: 3;
+			text-align: center;
+			max-width: 700px;
+			margin: 0 auto;
+			padding: 2rem;
+		}
+
+		.hero-content h1 {
+			color: #1a202c;
+			margin-bottom: 1.5rem;
+		}
+
+		.hero-content p {
+			font-size: 1.125rem;
+			color: #4a5568;
+			margin-bottom: 2rem;
+		}
+
+		/* Buttons */
+		.btn-primary {
+			background-color: var(--bs-primary);
+			border-color: var(--bs-primary);
+			font-weight: 600;
+			padding: 0.75rem 2rem;
+			transition: all 0.3s ease;
+			border-radius: 50px;
+		}
+
+		.btn-primary:hover {
+			background-color: #5a49dd;
+			border-color: #5a49dd;
+			transform: translateY(-2px);
+			box-shadow: 0 8px 24px rgba(107, 90, 255, 0.3);
+		}
+
+		.btn-primary:focus-visible {
+			outline: 2px solid #5a49dd;
+			outline-offset: 2px;
+		}
+
+		.btn-outline-primary {
+			color: var(--bs-primary);
+			border-color: var(--bs-primary);
+			font-weight: 600;
+			padding: 0.75rem 2rem;
+			border-radius: 50px;
+			transition: all 0.3s ease;
+		}
+
+		.btn-outline-primary:hover {
+			background-color: var(--bs-primary);
+			border-color: var(--bs-primary);
+			transform: translateY(-2px);
+		}
+
+		.btn-outline-primary:focus-visible {
+			outline: 2px solid var(--bs-primary);
+			outline-offset: 2px;
+		}
+
+		/* Sections */
+		section {
+			padding: 4rem 2rem;
+		}
+
+		.section-title {
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		/* About Section */
+		.about {
+			background-color: #f8f9fa;
+		}
+
+		.about-content {
+			display: flex;
+			align-items: center;
+			gap: 3rem;
+		}
+
+		.about-text h2 {
+			margin-bottom: 1.5rem;
+		}
+
+		.about-text p {
+			margin-bottom: 2rem;
+			color: #4a5568;
+		}
+
+		.features-list {
+			list-style: none;
+			padding: 0;
+		}
+
+		.features-list li {
+			padding: 0.75rem 0;
+			padding-left: 2rem;
+			position: relative;
+			color: #4a5568;
+			font-weight: 500;
+		}
+
+		.features-list li::before {
+			content: '✓';
+			position: absolute;
+			left: 0;
+			color: var(--bs-primary);
+			font-weight: 700;
+			font-size: 1.25rem;
+		}
+
+		.about-image {
+			flex-shrink: 0;
+		}
+
+		.about-image img {
+			width: 100%;
+			height: auto;
+			border-radius: 12px;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Services Section */
+		.services {
+			background-color: #ffffff;
+		}
+
+		.service-card {
+			background: linear-gradient(135deg, #f8f9fa 0%, #f0f3ff 100%);
+			border: 1px solid var(--bs-border-color);
+			border-radius: 12px;
+			padding: 2rem;
+			height: 100%;
+			transition: all 0.3s ease;
+			text-align: center;
+		}
+
+		.service-card:hover {
+			transform: translateY(-8px);
+			border-color: var(--bs-primary);
+			box-shadow: 0 12px 40px rgba(107, 90, 255, 0.15);
+		}
+
+		.service-card h3 {
+			color: var(--bs-primary);
+			margin-bottom: 1rem;
+		}
+
+		.service-card p {
+			color: #4a5568;
+			margin: 0;
+		}
+
+		/* Process Section */
+		.process {
+			background-color: #f8f9fa;
+		}
+
+		.process-step {
+			text-align: center;
+			position: relative;
+		}
+
+		.step-number {
+			font-size: 2.5rem;
+			font-weight: 700;
+			color: var(--bs-primary);
+			margin-bottom: 1rem;
+		}
+
+		.process-step h3 {
+			margin-bottom: 0.75rem;
+			font-size: 1.25rem;
+		}
+
+		.process-step p {
+			color: #4a5568;
+			font-size: 0.95rem;
+		}
+
+		.process-connector {
+			display: none;
+			position: absolute;
+			top: 50px;
+			right: -50%;
+			width: 50%;
+			height: 3px;
+			background: linear-gradient(90deg, var(--bs-primary), transparent);
+		}
+
+		@media (min-width: 768px) {
+			.process-connector {
+				display: block;
+			}
+
+			.process-step:last-child .process-connector {
+				display: none;
+			}
+		}
+
+		/* CTA Section */
+		.cta {
+			position: relative;
+			background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
+			min-height: 400px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.cta-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 1;
+		}
+
+		.cta-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 255, 255, 0.5);
+			backdrop-filter: blur(2px);
+			z-index: 2;
+		}
+
+		.cta-content {
+			position: relative;
+			z-index: 3;
+			text-align: center;
+			max-width: 600px;
+		}
+
+		.cta-content h2 {
+			margin-bottom: 1.5rem;
+			color: #1a202c;
+		}
+
+		.cta-content p {
+			font-size: 1.1rem;
+			color: #4a5568;
+			margin-bottom: 2.5rem;
+		}
+
+		.cta-buttons {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		/* Contact Section */
+		.contact {
+			background-color: #f8f9fa;
+		}
+
+		.contact-content {
+			max-width: 800px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.contact-content h2 {
+			margin-bottom: 1.5rem;
+		}
+
+		.contact-content p {
+			color: #4a5568;
+			margin-bottom: 2.5rem;
+			font-size: 1.05rem;
+		}
+
+		.privacy-note {
+			background-color: #e8eef7;
+			padding: 1.5rem;
+			border-radius: 8px;
+			border-left: 4px solid var(--bs-primary);
+			color: #4a5568;
+			font-size: 0.95rem;
+			margin-top: 2rem;
+		}
+
+		/* Footer */
+		footer {
+			background-color: #1a202c;
+			color: #cbd5e0;
+			text-align: center;
+			padding: 2rem;
+			font-size: 0.95rem;
+		}
+
+		footer a {
+			color: #cbd5e0;
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+		footer a:hover {
+			color: var(--bs-primary);
+		}
+
+		/* Skip Link */
+		.skip-link {
+			position: absolute;
+			top: -40px;
+			left: 0;
+			background: var(--bs-primary);
+			color: white;
+			padding: 8px;
+			z-index: 100;
+		}
+
+		.skip-link:focus {
+			top: 0;
+		}
+
+		/* Animations */
+		@media (prefers-reduced-motion: no-preference) {
+			.js-anim .reveal {
+				opacity: 0;
+				transform: translateY(24px);
+			}
+
+			.js-anim .reveal.visible {
+				animation: fadeInUp 0.6s ease forwards;
+			}
+
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(24px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			*,
+			*::before,
+			*::after {
+				animation-duration: 0.01ms !important;
+				transition-duration: 0.01ms !important;
+			}
+		}
+
+		/* Responsive */
+		@media (max-width: 767px) {
+			section {
+				padding: 3rem 1.5rem;
+			}
+
+			.about-content {
+				flex-direction: column;
+				gap: 2rem;
+			}
+
+			.cta-buttons {
+				flex-direction: column;
+			}
+
+			.cta-buttons .btn {
+				width: 100%;
+			}
+		}
+
+		/* Content Visibility */
+		.services-grid,
+		.process-grid,
+		.about {
+			content-visibility: auto;
+			contain-intrinsic-size: auto 600px;
+		}
+
+		/* Link Focus */
+		a:focus-visible {
+			outline: 2px solid var(--bs-primary);
+			outline-offset: 2px;
+			border-radius: 4px;
+		}
+
+		button:focus-visible {
+			outline: 2px solid currentColor;
+			outline-offset: 2px;
+		}
+
+		/* Touch Action */
+		.btn,
+		a[href],
+		button {
+			touch-action: manipulation;
+		}
+	</style>
+  <script type="application/ld+json" data-matris-jsonld>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Amero",
+  "url": "https://1000000107.site.matris.ai",
+  "description": "Escort girls website xxx",
+  "image": "https://images.matris.ai/sites/1000000107/media/p1/hero-bg-xl.jpg",
+  "inLanguage": "en"
+}
+</script>
+</head>
+<body>
+	<a href="#main" class="skip-link">Skip to main content</a>
+
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#home">Amero</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#about">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#services">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#process">How It Works</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#contact">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main id="main">
+		<section class="hero" id="home">
+			<img src="https://images.matris.ai/sites/1000000107/media/p1/hero-bg-xl.jpg" alt="Abstract futuristic cityscape at twilight with purple and blue gradients" width="1920" height="1080" class="hero-bg" fetchpriority="high">
+			<div class="hero-overlay"></div>
+			<div class="hero-content">
+				<h1>Premium Companionship Redefined</h1>
+				<p>Experience sophistication and discretion with our curated selection of elite companions. Professional, confidential, and tailored to your preferences.</p>
+				<a href="#about" class="btn btn-primary">Explore Profiles</a>
+			</div>
+		</section>
+
+		<section class="about reveal" id="about" style="scroll-margin-top: 80px;">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="about-text">
+							<h2>Discretion Meets Excellence</h2>
+							<p>Amero represents the pinnacle of professional companionship services. We maintain the highest standards of privacy, professionalism, and quality. Our platform connects discerning individuals with elite companions who understand the importance of sophistication and discretion.</p>
+							<ul class="features-list">
+								<li>Verified professional profiles</li>
+								<li>Complete privacy protection</li>
+								<li>24/7 concierge support</li>
+								<li>Premium experience guarantee</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="about-image">
+							<img src="https://images.matris.ai/sites/1000000107/media/p1/about-visual-xl.jpg" alt="Luxury minimalist interior with elegant furniture and soft ambient lighting" width="800" height="600" loading="lazy" decoding="async" style="width: 100%; height: auto;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="services" id="services" style="scroll-margin-top: 80px;">
+			<div class="container">
+				<div class="section-title">
+					<h2>Our Services</h2>
+				</div>
+				<div class="row g-4 services-grid">
+					<div class="col-md-6 col-lg-3">
+						<div class="service-card reveal">
+							<h3>Elite Companionship</h3>
+							<p>Professional companions for social events, business functions, and private occasions</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="service-card reveal">
+							<h3>Concierge Services</h3>
+							<p>Personalized arrangements and coordination for all your requirements</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="service-card reveal">
+							<h3>Privacy Protection</h3>
+							<p>Advanced security measures to ensure complete confidentiality and discretion</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="service-card reveal">
+							<h3>Premium Support</h3>
+							<p>24/7 professional assistance and customer care services</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="process" id="process" style="scroll-margin-top: 80px;">
+			<div class="container">
+				<div class="section-title">
+					<h2>How It Works</h2>
+				</div>
+				<div class="row g-4 process-grid">
+					<div class="col-md-6 col-lg-3">
+						<div class="process-step reveal">
+							<div class="step-number">01</div>
+							<h3>Browse Profiles</h3>
+							<p>Explore our curated selection of verified professional companions</p>
+							<div class="process-connector"></div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="process-step reveal">
+							<div class="step-number">02</div>
+							<h3>Private Consultation</h3>
+							<p>Discuss your preferences and requirements through our secure platform</p>
+							<div class="process-connector"></div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="process-step reveal">
+							<div class="step-number">03</div>
+							<h3>Arrangement Confirmation</h3>
+							<p>Finalize details with complete privacy and professional discretion</p>
+							<div class="process-connector"></div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="process-step reveal">
+							<div class="step-number">04</div>
+							<h3>Premium Experience</h3>
+							<p>Enjoy sophisticated companionship with full confidentiality guaranteed</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta reveal" id="cta" style="scroll-margin-top: 80px;">
+			<img src="https://images.matris.ai/sites/1000000107/media/p1/cta-bg-xl.jpg" alt="Abstract flowing lines with premium luxury aesthetic and ethereal lighting" width="1920" height="1080" class="cta-bg" loading="lazy" decoding="async">
+			<div class="cta-overlay"></div>
+			<div class="cta-content">
+				<h2>Ready to Begin?</h2>
+				<p>Join our exclusive platform and discover premium companionship services tailored to your sophisticated lifestyle.</p>
+				<div class="cta-buttons">
+					<a href="#about" class="btn btn-primary">Get Started</a>
+					<a href="#process" class="btn btn-outline-primary">Learn More</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact" id="contact" style="scroll-margin-top: 80px;">
+			<div class="container">
+				<div class="contact-content">
+					<h2>Get in Touch</h2>
+					<p>Reach out to Amero for confidential inquiries and professional assistance. We're here to help you find the perfect premium companionship experience.</p>
+					<div class="privacy-note">
+						All communications are strictly confidential and encrypted for your privacy and security.
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container">
+			<p>&copy; 2026 Amero. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script>
+		// Add js-anim class for animation support
+		document.documentElement.classList.add('js-anim');
+
+		// Intersection Observer for scroll animations
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, observerOptions);
+
+		// Observe all reveal elements
+		const revealElements = document.querySelectorAll('.reveal');
+		if (revealElements) {
+			revealElements.forEach((el) => {
+				observer.observe(el);
+			});
+		}
+	</script>
+</body>
+</html>
